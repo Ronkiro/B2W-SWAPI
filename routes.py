@@ -3,4 +3,6 @@ from controllers.PlanetController import PlanetController
 
 def setup_routes(app):
     api = Api(app)
-    api.add_resource(PlanetController, '/api/planets')
+    api.add_resource(PlanetController, 
+                    '/api/planets',
+                    '/api/planets/<int:id>')
