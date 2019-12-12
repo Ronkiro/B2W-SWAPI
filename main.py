@@ -1,6 +1,6 @@
 from flask import Flask
 from routes import setup_routes
-from mongoengine import connect
+import mongoengine
 import logging
 from dotenv import load_dotenv, find_dotenv
 from os import getenv
@@ -15,9 +15,9 @@ logging.info(f"Trying to read app.cfg")
 app.config.from_pyfile('app.cfg')
 
 logging.info(f"Trying to connect to {app.config['DATABASE_HOST']}...")
-connect (
+mongoengine.connect (
         getenv('DATABASE_NAME', app.config['DATABASE_NAME']), 
-        alias='planet-db-alias',
+        # alias='planet-db-alias',
         host=getenv('DATABASE_HOST', app.config['DATABASE_HOST']),
         port=getenv('DATABASE_PORT', app.config['DATABASE_PORT']),
         username=getenv('DATABASE_USER', app.config['DATABASE_USER']),
@@ -28,5 +28,5 @@ setup_routes(app)
 
 
 if __name__ == '__main__':
-    debug_mode = True if getenv('DEBUG', app.config['DEBUG']).lower() == 'true' else False
+    debug_mode = getenv('DEBUG', app.config['DEBUG'])
     app.run(debug=debug_mode)
