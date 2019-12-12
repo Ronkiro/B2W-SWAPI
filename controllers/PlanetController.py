@@ -2,6 +2,8 @@ from flask_restful import Resource, reqparse
 from models.Planet import Planet
 from flask import jsonify
 
+# SWAPI https://swapi.co/
+
 parser = reqparse.RequestParser()
 # Add current model attributes to parser
 for attr in Planet.__dict__.keys():
@@ -37,6 +39,8 @@ class PlanetController(Resource):
         planet.terrain = body['terrain']
         # TODO: ADD API request to update "in_movie"
         planet.save()
+        
+        return { "data": planet.to_json() }
 
     # POST: /api/planeta
     def post(self):
