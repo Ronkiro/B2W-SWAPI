@@ -1,6 +1,6 @@
 from flask_restful import Resource
 
-class PlanetaController(Resource):
+class PlanetController(Resource):
 
     # GET: /api/planeta
     def get(self):
