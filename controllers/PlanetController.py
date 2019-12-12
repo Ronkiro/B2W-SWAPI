@@ -46,13 +46,15 @@ class PlanetController(Resource):
         
         return { "data": planet.to_json() }
 
+    # DELETE: /api/planets
     def delete(self, id):
         planet = self.__planets(id=id)
-        planet.delete()
-        planet.save()
-        return 204
+        if planet:
+            planet.delete()
+            planet.save()
+            return 204
 
-    # POST: /api/planeta
+    # POST: /api/planet
     def post(self):
         planet_count = Planet.objects.count()
         planet = Planet(id=planet_count)
