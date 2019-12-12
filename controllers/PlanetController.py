@@ -3,6 +3,7 @@ from models.Planet import Planet
 from flask import jsonify
 import logging
 import json
+import requests
 
 # SWAPI https://swapi.co/
 parser = reqparse.RequestParser()
@@ -25,6 +26,23 @@ class PlanetController(Resource):
         """ Get body args """
         args = parser.parse_args()
         return args
+
+    def __request_planets(self, page):
+        r = requests.get(f'https://swapi.co/api/planets?page={page}')
+        return json.loads(r.content)
+
+    def __SWAPI_planets(self):
+        result_list = []
+        page = 1
+        content = self.__request_planets(page)
+        while(1):
+            print(content['next'])
+            result_list += content['results']
+            if content['next'] is None:             # if no next page
+                break                               # stop parsing
+            page += 1                               # else keep
+            content = self.__request_planets(page)
+        return result_list
 
     # GET: /api/planeta/:?id
     def get(self, id=None):

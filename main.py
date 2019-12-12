@@ -14,10 +14,9 @@ load_dotenv(find_dotenv())
 logging.info(f"Trying to read app.cfg")
 app.config.from_pyfile('app.cfg')
 
-logging.info(f"Trying to connect to {app.config['DATABASE_HOST']}...")
+logging.info(f"Trying to connect to database...")
 mongoengine.connect (
         getenv('DATABASE_NAME', app.config['DATABASE_NAME']), 
-        # alias='planet-db-alias',
         host=getenv('DATABASE_HOST', app.config['DATABASE_HOST']),
         port=getenv('DATABASE_PORT', app.config['DATABASE_PORT']),
         username=getenv('DATABASE_USER', app.config['DATABASE_USER']),
