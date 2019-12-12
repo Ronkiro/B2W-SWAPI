@@ -1,4 +1,5 @@
 from flask_restful import Resource
+from models.Planet import Planet
 
 class PlanetController(Resource):
 

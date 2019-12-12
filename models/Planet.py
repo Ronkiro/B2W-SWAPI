@@ -1,6 +1,6 @@
 import mongoengine
 
-class Planeta(mongoengine.Document):
+class Planet(mongoengine.Document):
     id = mongoengine.IntField(primary_key=True)
     name = mongoengine.StringField(max_length=50, required=True)
     climate = mongoengine.StringField(max_length=50, required=True)
