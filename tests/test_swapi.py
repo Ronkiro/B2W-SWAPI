@@ -1,5 +1,10 @@
+import sys, os
+myPath = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, myPath + '/../')
+
 import unittest
 from resources.SWAPI import SWAPI
+
 
 class TestSWAPI(unittest.TestCase):
     def setUp(self):
