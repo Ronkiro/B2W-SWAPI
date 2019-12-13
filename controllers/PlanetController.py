@@ -33,7 +33,7 @@ class PlanetController(Resource):
         if planet_list:
             return { "data": planet_list.to_json() }
         else:
-            return { "data": {} }
+            return { "data": [] }
 
     # DELETE: /api/planets
     def delete(self, id=None, name=None):
@@ -51,6 +51,8 @@ class PlanetController(Resource):
         planet_count = Planet.objects.count()
         planet = Planet(id=planet_count)
         body = self.__body()
+        if not any([body['name'], body['climate'], body['terrain']]):
+            return abort(400)
         planet.name = body['name']
         planet.climate = body['climate']
         planet.terrain = body['terrain']

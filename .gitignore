@@ -3,3 +3,4 @@ env
 __pycache__
 .env
 app.cfg
+.pytest_cache
