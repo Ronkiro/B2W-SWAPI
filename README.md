@@ -30,10 +30,12 @@ A minimal Dockerfile is also available to standard this process.
 
 > ### /api/planets
 > GET: Returns list of planets in API's database.
+
 > POST: Creates a new planet.
 
 > ### /api/planets/<id>
 > GET: Returns the planet referenced by <id>
+
 > DELETE: Deletes the planet referenced by <id>
 
 ## Running tests
@@ -45,3 +47,9 @@ pytest
 ```
 
 This will start a detailed test, running all tests from `tests/` directory
+
+## End
+
+Thanks for the B2W team for giving me the opportunity to try this challenge.
+
+May the force be with us.
