@@ -1,0 +1,8 @@
+language: python
+
+install:
+  - pip install -r requirements.txt
+jobs:
+  include:
+    - stage: Unit and Integration tests
+      script: pytest
