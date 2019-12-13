@@ -6,4 +6,4 @@ def setup_routes(app):
     api.add_resource(PlanetController, 
                     '/api/planets',
                     '/api/planets/<int:id>',
-                    '/api/planets/<str:name>')
+                    '/api/planets/<string:name>')

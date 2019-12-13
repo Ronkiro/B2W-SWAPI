@@ -25,6 +25,8 @@ class SWAPI:
         """
         Returns data from a planet if it exists, else None
         """
+        if not isinstance(planet, str):
+            raise TypeError("planet argument must be str.")
         planets = self.planets()
         for _planet in planets:
             if _planet['name'].lower() == planet.lower():
@@ -35,7 +37,9 @@ class SWAPI:
         """
         Returns the number of times a planet appeared in a movie
         """
+        if not isinstance(planet, str):
+            raise TypeError("planet argument must be str.")
         planet = self.find_planet(planet)
         if planet:
-            return  len(planet['films'])
+            return len(planet['films'])
         return 0
