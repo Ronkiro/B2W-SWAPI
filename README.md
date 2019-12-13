@@ -1,9 +1,9 @@
 # SWAPI
 
 This repo was made as a solution to B2W's challenge Star Wars API.
-
-![May the fork be with you](./resources/img/yoda-fork.jpg)
-
+<p align="center">
+    ![May the fork be with you](./resources/img/yoda-fork.jpg)
+</p>
 ## Requirements
 
 - Python 3 (*Recommended: 3.6.6*)
