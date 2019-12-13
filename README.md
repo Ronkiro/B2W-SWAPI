@@ -29,14 +29,19 @@ A minimal Dockerfile is also available to standard this process.
 ## Usage
 
 > ### /api/planets
-> GET: Returns list of planets in API's database.
+**GET**: Returns list of planets in API's database.
 
-> POST: Creates a new planet.
+**POST**: Creates a new planet.
 
 > ### /api/planets/<id>
-> GET: Returns the planet referenced by <id>
+ **GET**: Returns the planet referenced by <id>
 
-> DELETE: Deletes the planet referenced by <id>
+ **DELETE**: Deletes the planet referenced by <id>
+
+ > ### /api/planets/<name>
+ **GET**: Returns the planet referenced by <name>
+
+ **DELETE**: Deletes the planet referenced by <name>
 
 ## Running tests
 
