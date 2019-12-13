@@ -2,7 +2,7 @@
 
 This repo was made as a solution to B2W's challenge Star Wars API.
 <p align="center">
-    ![May the fork be with you](./resources/img/yoda-fork.jpg)
+    <img width="460" height="300" src=./resources/img/yoda-fork.jpg />
 </p>
 ## Requirements
 
